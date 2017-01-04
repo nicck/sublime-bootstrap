@@ -1,18 +1,20 @@
 {
-	"auto_upgrade_last_run": null,
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"ChangeQuotes",
-		"CoffeeScript",
-		"Cucumber",
-		"Git",
+		"ColorSchemeSelector",
 		"GitGutter",
-		"Haml",
-		"LESS",
+		"GitHubinator",
+		"One Half Color Schemes",
 		"Package Control",
 		"Quick File Move",
-		"Ruby Slim",
-		"Sass",
-		"Theme - Soda"
+		"SublimeLinter",
+		"SublimeLinter-contrib-eslint",
+		"Theme - SoDaReloaded",
+		"Themr"
 	]
 }

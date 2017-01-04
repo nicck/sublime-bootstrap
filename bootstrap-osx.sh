@@ -10,8 +10,8 @@ then
   echo 'Sublime Text 3 application found.'
 else
   echo 'Sublime Text 3 not installed. Please install it to /Applications folder first.'
-  echo 'Then run in terminal: curl -fsSL http://git.io/sublime3-bootstrap | sh'
-  open 'http://www.sublimetext.com/3'
+  echo '1) brew cask install sublime-text'
+  echo '2) curl -fsSL http://git.io/sublime3-bootstrap | sh'
   exit 1
 fi
 
@@ -23,21 +23,21 @@ then
 else
   CMD_PATH="/usr/local/bin"
 
-  sudo chown -R `whoami` /usr/local
+  # sudo chown -R `whoami` /usr/local
   mkdir /usr/local/bin 2> /dev/null
 
   echo "Adding terminal command 'subl' into $CMD_PATH"
   ln -sf "$APP_DIR/Contents/SharedSupport/bin/subl" "$CMD_PATH/subl"
-fi
 
-if [[ :$PATH: != *:"$CMD_PATH":* ]] ; then
-  echo "\033[0;31m ! \033[0m $CMD_PATH NOT found in \$PATH"
+  if [[ :$PATH: != *:"$CMD_PATH":* ]] ; then
+    echo "\033[0;31m ! \033[0m $CMD_PATH NOT found in \$PATH"
+  fi
 fi
 
 # Install package control
 # http://wbond.net/sublime_packages/package_control/installation#ST3
 
-if [ -d "$SUBLIME_DIR" ]
+if [ -d "$SUBLIME_DIR/Installed Packages" ]
 then
   echo 'Config directory found.'
 else
@@ -54,7 +54,7 @@ else
   echo 'Installing Package Control'
 
   curl --silent --show-error --fail --location \
-    'http://sublime.wbond.net/Package%20Control.sublime-package' \
+    'https://packagecontrol.io/Package%20Control.sublime-package' \
     --output "$SUBLIME_DIR/Installed Packages/Package Control.sublime-package"
 fi
 
@@ -74,5 +74,4 @@ then
 fi
 
 echo "Done"
-
-open "$APP_DIR"
+echo "Please wait ... (press ctrl-\` to see progress)" | subl -
