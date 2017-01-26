@@ -14,7 +14,7 @@
 		".git"
 	],
 	"font_face": "Iosevka",
-	"font_size": 14,
+	"font_size": 16,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":

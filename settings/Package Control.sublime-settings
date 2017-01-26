@@ -5,8 +5,11 @@
 	],
 	"installed_packages":
 	[
+		"All Autocomplete",
+		"AutoFileName",
 		"ChangeQuotes",
 		"ColorSchemeSelector",
+		"DoxyDoxygen",
 		"GitGutter",
 		"GitHubinator",
 		"One Half Color Schemes",
